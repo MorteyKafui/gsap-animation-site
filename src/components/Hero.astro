@@ -1,0 +1,154 @@
+<header class="text-white h-[100dvh] text-center">
+  <div
+    class="max-w-6xl container mx-auto px-10 flex flex-col items-center justify-center gap-10 h-full"
+  >
+    <h1 class="hero-title text-8xl font-bold">
+      Animate <span class="text-color-1">Anything,</span>
+      <span class="text-color-2">Anywhere,</span>
+      <span class="text-color-3">Anyhow</span> you want
+    </h1>
+    <p class="italic text-2xl hero-text">
+      Develop, test, run, and bundle JavaScript & TypeScript projects—all with
+      Bun. Bun is an all-in-one JavaScript runtime & toolkit designed for speed,
+      complete with a bundler, test runner, and Node.js-compatible package
+      manager.
+    </p>
+    <!-- <p class="hello">G-Animate is a</p> -->
+    <div class="flex gap-16 items-center">
+      <button
+        class="button bg-white text-bg-color px-10 py-2 font-bold text-2xl"
+        >Get Started</button
+      >
+      <button
+        class="button outline outline-color-2 px-10 py-2 text-2xl font-bold"
+        >Read the docs</button
+      >
+    </div>
+  </div>
+</header>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import { TextPlugin } from "gsap/TextPlugin";
+  // import { SplitText } from "gsap/SplitText";
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(TextPlugin);
+  // gsap.registerPlugin(SplitText);
+
+  const tl = gsap.timeline({ defaults: { opacity: 0, ease: "elastic.inOut" } });
+  tl.from(".hero-title", {
+    y: 100,
+    scale: 1.2,
+  })
+
+    .from(".hero-text", {
+      x: 100,
+      duration: 1,
+    })
+    .from("header button", {
+      y: 100,
+      stagger: 0.2,
+    });
+
+  // let split;
+  // const splitText = gsap.timeline({});
+  // split = new SplitText(".hello", { type: "chars" });
+
+  // gsap.to(".hello", {
+  //   text: "Hello Text aniamtion",
+  //   ease: "power1.in",
+  //   duration: 3,
+  //   yoyo: true,
+  //   repeat: -1,
+  // });
+
+  // tl.from(
+  //   ".hero-title",
+  //   {
+  //     yPercent: -100,
+  //     scale: 2,
+  //   },
+  //   {
+  //     opacity: 1,
+  //     yPercent: 0,
+  //     scale: 1,
+  //     duration: 2,
+  //     ease: "elastic.inOut",
+  //     // repeat: -1,
+  //     yoyo: true,
+  //   }
+  // );
+
+  // gsap.fromTo(
+  //   ".hero-text",
+  //   {
+  //     opacity: 0,
+  //   },
+  //   {
+  //     opacity: 1,
+  //     duration: 2,
+  //     ease: "power2.inOut",
+  //     delay: 2,
+  //     yoyo: true,
+  //   }
+  // );
+
+  // gsap.fromTo(
+  //   ".button",
+  //   {
+  //     opacity: 0,
+  //   },
+  //   {
+  //     opacity: 1,
+  //     duration: 2,
+  //     ease: "power2.inOut",
+  //     delay: 3,
+  //     yoyo: true,
+  //   }
+  // );
+
+  // const ani = gsap.to("button", {
+  //   scale: 1.4,
+  //   backgroundColor: "black",
+  //   ease: "bounce",
+  // });
+
+  // document.querySelectorAll("button").forEach(el =>
+  //   el.addEventListener("mouseenter", () => {
+  //     ani.play();
+  //   })
+  // );
+  // document.querySelectorAll("button").forEach(el =>
+  //   el.addEventListener("mouseleave", () => {
+  //     ani.reverse();
+  //   })
+  // );
+
+  // tl.to(".hero-title", {
+  //   opacity: 1,
+  //   duration: 2,
+  //   x: 100,
+  //   ease: "power2.inOut",
+  //   repeat: -1,
+  //   yoyo: true,
+  //   stagger: 0.1,
+  // });
+
+  // gsap.fromTo(
+  //   ".hero-title",
+  //   {
+  //     opacity: 0,
+  //     // x: -1000,
+  //   },
+  //   {
+  //     opacity: 1,
+  //     duration: 2,
+  //     // x: 0,
+  //     ease: "power2.inOut",
+  //     // repeat: -1,
+  //     yoyo: true,
+  //     stagger: 0.1,
+  //   }
+  // );
+</script>

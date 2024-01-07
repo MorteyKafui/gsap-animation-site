@@ -1,0 +1,113 @@
+<section id="about" class="text-white text-xl">
+  <div class="max-w-6xl container mx-auto px-10 py-8">
+    <h2 class="about-text text-center text-5xl text-white my-10">
+      <span class="text-color-1"> G-Animate</span> is a <span
+        class="text-color-3">JavaScript animation</span
+      > library built on top &mdash; <span class="text-color-2">GSAP</span>
+    </h2>
+    <p class="my-10 text-center">
+      G-animate is a new JavaScript runtime built from scratch to serve the
+      modern JavaScript ecosystem. It has three major design goals:
+    </p>
+    <ul class="flex flex-col gap-10">
+      <li>
+        <span class="font-bold text-color-2">Speed:</span> Bun starts fast and runs
+        fast. It extends JavaScriptCore, the performance-minded JS engine built for
+        Safari. As computing moves to the edge, this is critical.
+      </li>
+      <li>
+        <span class="font-bold text-color-2">Elehant API:</span> G-animate provides
+        a minimal set of highly-optimimized APIs for performing common tasks, like
+        starting an HTTP server and writing files.
+      </li>
+      <li>
+        <span class="font-bold text-color-2">Cohesive DX:</span> G-animate is a complete
+        toolkit for building JavaScript apps, including a package manager, test runner,
+        and bundler.
+      </li>
+    </ul>
+    <p class="my-8">
+      G-animate is designed as a drop-in replacement for Node.js. It natively
+      implements hundreds of Node.js and Web APIs, including fs, path, Buffer
+      and more.
+    </p>
+    <p class="my-8 para">
+      The goal of Bun is to run most of the world's server-side JavaScript and
+      provide tools to improve performance, reduce complexity, and multiply
+      developer productivity.
+    </p>
+  </div>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const tl = gsap.timeline({ defaults: { opacity: 0 } });
+
+  tl.fromTo(
+    ".about-text",
+    {
+      x: 300,
+      scrollTrigger: {
+        trigger: ".about-text",
+        // toggleActions: "play none none none",
+      },
+    },
+    { opacity: 1, x: 0, duration: 2 }
+  );
+
+  // const tl = gsap.timeline({
+  //   defaults: {
+  //     opacity: 0,
+  //     ease: "back",
+  //     yoyo: true,
+  //   },
+  // });
+
+  // tl.from("#about", {
+  //   ease: "bounce",
+  // })
+  //   .from(".about-text", {
+  //     x: 100,
+  //     scrollTrigger: {
+  //       trigger: ".about-text",
+  //     },
+  //   })
+  //   .from("#about p", {
+  //     y: 50,
+  //   })
+  //   .from("#about ul li", {
+  //     y: 50,
+  //   });
+
+  // gsap.from(".about-text", {
+  //   scale: 2,
+  //   scrollTrigger: {
+  //     trigger: ".about-text",
+  //     toggleActions: "play restart none none",
+  //   },
+  //   ease: "back",
+  // });
+
+  // gsap.fromTo(
+  //   ".para",
+  //   {
+  //     opacity: 0,
+  //   },
+  //   {
+  //     opacity: 1,
+  //     duration: 5,
+  //     scrollTrigger: {
+  //       trigger: ".para",
+  //       start: "top 75%",
+  //       end: "bottom 25%",
+  //       toggleActions: "play none none none",
+  //     },
+  //     ease: "back",
+  //     yoyo: true,
+  //   }
+  // );
+</script>
